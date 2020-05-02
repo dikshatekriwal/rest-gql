@@ -32,18 +32,7 @@
                   ],
                   "description": "",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "username": {
-                        "type": "string"
-                      },
-                      "password": {
-                        "type": "string"
-                      }
-                    }
+                    "$ref": "../models/user.v1.json"
                   }
                 }
               }
@@ -53,6 +42,41 @@
         "operationId": "getAllUsers",
         "parameters": [],
         "description": "get all users"
+      },
+      "post": {
+        "summary": "",
+        "operationId": "createUser",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "to add new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/users.v1.json"
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "user"
+        ]
       }
     }
   }
