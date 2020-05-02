@@ -21,29 +21,31 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": [{                 
+                "schema": {
                   "title": "user",
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "username": {
-                      "type": "string"
-                    },
-                    "password ": {
-                      "type": "string"
-                    }
-                  },
+                  "type": "array",
                   "x-examples": {
                     "example-1": {}
                   },
                   "x-tags": [
                     "user"
                   ],
-                  "description": ""
+                  "description": "",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      }
+                    }
+                  }
                 }
-                ]
               }
             }
           }
