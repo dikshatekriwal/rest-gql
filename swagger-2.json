@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://127.0.0.1:3100"
+      "url": "https://d59c0783.ngrok.io"
     }
   ],
   "paths": {
