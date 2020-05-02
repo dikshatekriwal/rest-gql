@@ -21,8 +21,27 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "../models/user.v1.yaml"
+                "schema": {                 
+                  "title": "user",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "username": {
+                      "type": "string"
+                    },
+                    "password ": {
+                      "type": "string"
+                    }
+                  },
+                  "x-examples": {
+                    "example-1": {}
+                  },
+                  "x-tags": [
+                    "user"
+                  ],
+                  "description": ""
                 }
               }
             }
