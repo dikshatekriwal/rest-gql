@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "http://127.0.0.1:3100"
     }
   ],
   "paths": {
@@ -21,7 +21,7 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": {                 
+                "schema": [{                 
                   "title": "user",
                   "type": "object",
                   "properties": {
@@ -43,6 +43,7 @@
                   ],
                   "description": ""
                 }
+                ]
               }
             }
           }
