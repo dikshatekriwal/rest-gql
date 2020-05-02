@@ -63,7 +63,19 @@
         "tags": [
           "user"
         ],
-        "responses": {},
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
         "operationId": "createUser",
         "requestBody": {
           "content": {
