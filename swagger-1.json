@@ -32,9 +32,16 @@
                   ],
                   "description": "",
                   "items": {
-                    "$ref": "../models/user.v1.json"
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "username": {
+                        "type": "string"
+                      }
+                    }
                   }
-                }
               }
             }
           }
@@ -68,7 +75,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../models/users.v1.json"
+                "items": {
+                    "type": "object",
+                    "properties": {
+                      "username": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
               }
             }
           },
