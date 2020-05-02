@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "user",
-    "version": "1.0"
+    "title": "api",
+    "version": "1.0",
+    "description": ""
   },
   "servers": [
     {
@@ -31,6 +32,20 @@
                       },
                       "username": {
                         "type": "string"
+                      },
+                      "has_stories": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "integer"
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -65,7 +80,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Ok",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -88,6 +103,20 @@
                   },
                   "password": {
                     "type": "string"
+                  },
+                  "has_stories": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "integer"
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -125,6 +154,20 @@
                     },
                     "id": {
                       "type": "string"
+                    },
+                    "": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -133,6 +176,138 @@
           }
         },
         "operationId": "getUser"
+      }
+    },
+    "/story": {
+      "get": {
+        "summary": "get all stories",
+        "tags": [
+          "story"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "getStory"
+      },
+      "post": {
+        "summary": "add story",
+        "tags": [
+          "story"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "createStory",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/story/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "get story by id",
+        "tags": [
+          "story"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "getStoryById"
+      },
+      "put": {
+        "summary": "update story by id",
+        "tags": [
+          "story"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "updateStory",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete story by id",
+        "tags": [
+          "story"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "deleteStory"
       }
     }
   }
